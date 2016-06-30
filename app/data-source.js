@@ -1,6 +1,6 @@
 import THREE from 'three';
-import test_data from './data.js';
-console.log(test_data);
+import test_data from '../data.json';
+
 class DataLoader extends THREE.EventDispatcher {
   constructor() {
     super();

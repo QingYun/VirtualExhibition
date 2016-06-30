@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "start": "webpack-dev-server --devtool eval --progress --hot --content-base app",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js",
+    "deploy": "set NODE_ENV=production & webpack -p --config webpack.production.config.js",
     "validate": "npm ls",
     "commit": "git cz",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 1"
@@ -38,6 +38,7 @@
     "exports-loader": "^0.6.3",
     "ghooks": "^1.0.3",
     "imports-loader": "^0.6.5",
+    "json-loader": "^0.5.4",
     "open-browser-webpack-plugin": "0.0.2",
     "stats-js": "^1.0.0-alpha1",
     "style-loader": "~0.13.0",
@@ -52,8 +53,7 @@
   ],
   "license": "MIT",
   "config": {
-    "ghooks": {
-    },
+    "ghooks": {},
     "validate-commit-msg": {
       "types": [
         "feat",

@@ -1,4 +1,4 @@
-const test_data = [
+[
   {
     "src": "./pic/1_entrance.jpg",
     "width": 4096,
@@ -60,8 +60,8 @@ const test_data = [
       {
         "type": "image",
         "src": "pic/play.png",
-        "size": { width: 64, height: 64 },
-        "pos": { x: 1090, y: 1010 },
+        "size": { "width": 64, "height": 64 },
+        "pos": { "x": 1090, "y": 1010 },
         "action": {
           "name": "play-video",
           "payload": {
@@ -153,7 +153,7 @@ const test_data = [
         "action": {
           "name": "iframe",
           "payload": {
-            "url": "./Calligraphy/main.html",
+            "url": "./Calligraphy/main.html"
           }
         }
       },
@@ -163,12 +163,10 @@ const test_data = [
         "action": {
           "name": "new-tab",
           "payload": {
-            "url": "./wish tree/index.html",
+            "url": "./wish tree/index.html"
           }
         }
       }
     ]
-  },
+  }
 ]
-
-export default test_data;

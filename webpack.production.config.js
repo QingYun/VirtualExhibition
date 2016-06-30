@@ -17,6 +17,7 @@ module.exports = {
     loaders:[
       { test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader' },
       { test: /\.js$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /data\.json$/, loader: path.join(__dirname, './data-loader.js') },
     ]
   },
   resolve: {
