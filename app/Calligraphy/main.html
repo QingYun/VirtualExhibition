@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Calligraphy</title>
+
+	<style>
+		html {
+		   width: 270px;
+	       height: 350px;
+		}
+		canvas {
+		cursor: url('./pic/cursor.png') 20 100, auto;
+		}
+	</style>
+
+	
+</head>
+
+<body>
+
+
+
+	<!--W&H is fixed in current stage, should be dynamic on later -->
+	<canvas id="panel" width="270" height="270"> 
+	</canvas>
+	
+
+	<!-- Submit for comparasion-->
+	<div align="middle">
+		<button onclick="Compare()">Submit</button>
+		<button onclick="init()">Reset</button>
+		<button onclick="next_q()">Next</button>
+	</div>
+
+	<!--test script
+	 <img id="canvasImg" alt="Right click to save me!">
+	  <img id="canvasImg2" alt="Right click to save me!">
+	-->  
+
+	<!--Library for use on picture comparasion-->
+	<script type="text/javascript" src="./resemble.js"></script>
+	<!--Main script for the site-->
+	<script type="text/javascript" src="./paint.js"></script>
+
+   
+
+</body>
+
+</html>
+
+

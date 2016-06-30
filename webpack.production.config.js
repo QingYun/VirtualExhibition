@@ -6,7 +6,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   devtool: 'cheap-source-map',
   entry: [
-    path.resolve(__dirname, 'app/main.jsx'),
+    path.resolve(__dirname, 'app/main.js'),
   ],
   output: {
     path: __dirname + '/build',
@@ -16,11 +16,11 @@ module.exports = {
   module: {
     loaders:[
       { test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader' },
-      { test: /\.js[x]?$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /\.js$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader' },
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js'],
   },
   plugins: [
     new webpack.optimize.DedupePlugin(),
@@ -33,5 +33,8 @@ module.exports = {
       { from: './app/index.html', to: 'index.html' },
       { from: './app/main.css', to: 'main.css' }
     ]),
+    new webpack.DefinePlugin({
+      __DEV__: process.env.NODE_ENV !== 'production'
+    })
   ]
 };

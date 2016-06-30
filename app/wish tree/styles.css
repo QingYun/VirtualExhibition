@@ -1,0 +1,158 @@
+html {
+    height: 100%;
+}
+
+.grass {
+    margin: 0;
+    z-index: 999;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+}
+
+body {
+    height: 100%;
+    background: url("images/background.png") no-repeat;
+    /*    background-color: aqua;*/
+    background-size: cover;
+}
+
+.tree {
+    /*      background: url("images/tree1.jpg") no-repeat;*/
+}
+
+.tree_img {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.leaf_test {
+    position: absolute;
+    top: 12%;
+    left: 12%;
+    height: 55%;
+    width: 60%;
+}
+
+.leaf_1 {
+    transform-origin: top;
+    background-image: url("images/leaves/1.png");
+}
+
+.leaf_2 {
+    transform-origin: top;
+    background-image: url("images/leaves/2.png");
+}
+
+.leaf_3 {
+    transform-origin: top;
+    background-image: url("images/leaves/3.png");
+}
+
+.leaf_group {
+    position: absolute;
+    display: inline-block;
+    width: 30%;
+    height: 30%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: growUp;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: forwards;
+    /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+}
+
+@keyframes growUp {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+    25% {
+        width: 5%;
+        height: 5%;
+    }
+    50% {
+        width: 12%;
+        height: 12%;
+    }
+    70% {
+        width: 23%;
+        height: 23%;
+    }
+    100% {
+        width: 30%;
+        height: 30%;
+    }
+}
+
+.leaf_group:hover {
+    cursor: pointer;
+    width: 35%;
+    height: 35%;
+}
+
+.text_on_leaf {
+    z-index: 999;
+    transform: rotate(180deg);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /*    margin: 50% 20% 30% 20%;*/
+    margin: 25% auto auto 30%;
+    width: 50%;
+    height: 20%;
+}
+
+.name_on_leaf {
+    display: none;
+}
+
+.time_tag {
+    display: none;
+}
+
+#special_leaf_4 {
+    margin: 20% 20% 30% 20% !important;
+}
+
+.modal-content img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.user_input {
+    padding: 30px 10px;
+    margin-top: 2%;
+    z-index:1000;
+}
+
+textarea {
+    /*    border-radius: 3px;*/
+}
+
+.counter {
+    display: inline;
+    float: right;
+}
+
+#wish_content {
+    width: 100%;
+    height: 75px;
+}
+
+#wisher_name {
+    max-width: 100%;
+}
+
+#make_wish {
+    float: right;
+}
+
+#modal_content {
+    width: 100%;
+    /*    word-break: break-all;*/
+    word-wrap: break-word;
+}
