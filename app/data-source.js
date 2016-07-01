@@ -6,7 +6,7 @@ class DataLoader extends THREE.EventDispatcher {
     super();
   }
 
-  loadScene(scene_id = 7) {
+  loadScene(scene_id = 0) {
     this.dispatchEvent(Object.assign(test_data[scene_id], {
       type: 'new scene'
     }));

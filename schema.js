@@ -11,12 +11,9 @@
 {
   type: 'portal',
   src: String,
-  to: Any,    // destination scene id
-  pos: {
-    x: Integer,
-    y: Integer,
-    angle: Integer
-  }
+  angle: Integer
+  pos: { x: Integer, y: Integer }
+  action: Action
 }
 
 // widget 图片

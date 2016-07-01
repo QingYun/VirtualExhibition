@@ -6,8 +6,8 @@ const canvas = document.createElement('canvas');
 canvas.width = 4096;
 canvas.height = 2048;
 
-function drawOnCanvas(ctx, arrow_img, arrow) {
-  const { x, y, angle } = arrow.pos;
+function drawOnCanvas(ctx, arrow_img, pos, angle) {
+  const { x, y } = pos;
   const { width, height } = arrow_img;
   ctx.translate(x, y);
   ctx.rotate(angle);
@@ -28,7 +28,8 @@ module.exports = function drawWidget(widget, scene) {
 
   return loadImage(widget.src)
     .then((img) => {
-      drawOnCanvas(ctx, img, widget);
+      const { pos, angle } = widget
+      drawOnCanvas(ctx, img, pos, angle);
       const material = new THREE.MeshBasicMaterial({
         map: loadTexture(canvas.toDataURL('image/png')),
         transparent: true
@@ -41,12 +42,7 @@ module.exports = function drawWidget(widget, scene) {
         [cy - hh, cy + hh, cx - hw, cx + hw];
       return {
         polygon: [[lx, uy], [rx, uy], [lx, ly], [rx, ly]],
-        action: {
-          name: 'change-scene',
-          payload: {
-            destination: widget.to
-          }
-        }
+        action: widget.action
       };
     });
 };

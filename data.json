@@ -7,22 +7,14 @@
       {
         "type": "portal",
         "src": "./pic/up_arrow.png",
-        "pos": {
-          "x": 2500,
-          "y": 1500,
-          "angle": 0
-        },
-        "to": 1
-      },
-      {
-        "type": "portal",
-        "src": "./pic/up_arrow.png",
-        "pos": {
-          "x": 1500,
-          "y": 1500,
-          "angle": 90
-        },
-        "to": 1
+        "pos": { "x": 2500, "y": 1500 },
+        "angle": 0,
+        "action": {
+          "name": "change-scene",
+          "payload": {
+            "destination": 1
+          }
+        }
       }
     ]
   },
@@ -33,12 +25,15 @@
     "widgets": [
       {
         "type": "portal",
-        "pos": {
-          "x": 2500,
-          "y": 1500,
-          "angle": 0
-        },
-        "to": 2
+        "src": "./pic/up_arrow.png",
+        "pos": { "x": 2500, "y": 1500 },
+        "angle": 0,
+        "action": {
+          "name": "change-scene",
+          "payload": {
+            "destination": 2
+          }
+        }
       }
     ]
   },
@@ -50,12 +45,14 @@
       {
         "type": "portal",
         "src": "./pic/up_arrow.png",
-        "pos": {
-          "x": 2500,
-          "y": 1500,
-          "angle": 90
-        },
-        "to": 3
+        "pos": { "x": 2500, "y": 1500 },
+        "angle": 90,
+        "action": {
+          "name": "change-scene",
+          "payload": {
+            "destination": 3
+          }
+        }
       },
       {
         "type": "image",
@@ -82,12 +79,14 @@
       {
         "type": "portal",
         "src": "./pic/up_arrow.png",
-        "pos": {
-          "x": 2500,
-          "y": 1500,
-          "angle": 90
-        },
-        "to": 4
+        "pos": { "x": 2500, "y": 1500 },
+        "angle": 90,
+        "action": {
+          "name": "change-scene",
+          "payload": {
+            "destination": 4
+          }
+        }
       }
     ]
   },
@@ -99,12 +98,14 @@
       {
         "type": "portal",
         "src": "./pic/up_arrow.png",
-        "pos": {
-          "x": 2500,
-          "y": 1500,
-          "angle": 60
-        },
-        "to": 5
+        "pos": { "x": 2500, "y": 1500 },
+        "angle": 60,
+        "action": {
+          "name": "change-scene",
+          "payload": {
+            "destination": 5
+          }
+        }
       }
     ]
   },
@@ -116,12 +117,14 @@
       {
         "type": "portal",
         "src": "./pic/up_arrow.png",
-        "pos": {
-          "x": 2500,
-          "y": 1500,
-          "angle": 35
-        },
-        "to": 6
+        "pos": { "x": 2500, "y": 1500 },
+        "angle": 35,
+        "action": {
+          "name": "change-scene",
+          "payload": {
+            "destination": 6
+          }
+        }
       }
     ]
   },
@@ -133,12 +136,14 @@
       {
         "type": "portal",
         "src": "./pic/up_arrow.png",
-        "pos": {
-          "x": 2500,
-          "y": 1500,
-          "angle": 35
-        },
-        "to": 7
+        "pos": { "x": 2500, "y": 1500 },
+        "angle": 35,
+        "action": {
+          "name": "change-scene",
+          "payload": {
+            "destination": 7
+          }
+        }
       }
     ]
   },
