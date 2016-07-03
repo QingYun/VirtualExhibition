@@ -89,3 +89,24 @@
     url: String
   }
 }
+
+{
+  name: 'show-slider',
+  payload: {
+    slides: [{
+      type: 'text',
+      content: {
+        header: String,
+        subheader: String,
+        paragraphs: [String]
+      }
+    } | {
+      type: 'image',
+      content: {
+        src: String,
+        caption: String,
+        description: String
+      }
+    }]
+  }
+}

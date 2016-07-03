@@ -28,7 +28,7 @@ module.exports = function drawWidget(widget, scene) {
 
   return loadImage(widget.src)
     .then((img) => {
-      const { pos, angle } = widget
+      const { pos, angle } = widget;
       drawOnCanvas(ctx, img, pos, angle);
       const material = new THREE.MeshBasicMaterial({
         map: loadTexture(canvas.toDataURL('image/png')),

@@ -1,3 +1,5 @@
+require('./styles/main.scss');
+
 import path from 'path';
 import Stats from 'stats-js';
 import getDataSource from './data-source.js';

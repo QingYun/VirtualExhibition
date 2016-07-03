@@ -1,0 +1,13 @@
+.image-slide {
+  text-align: center;
+
+  .bottom-bar {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+
+    h3, p {
+      color: #fff;
+    }
+  }
+}

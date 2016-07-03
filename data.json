@@ -15,6 +15,50 @@
             "destination": 1
           }
         }
+      },
+      {
+        "type": "transparent",
+        "polygon": [[3530, 885], [3840, 895], [3850, 1080], [3535, 1090]],
+        "action": {
+          "name": "show-slider",
+          "payload": {
+            "slides": [
+              {
+                "type": "text",
+                "content": {
+                  "header": "Hello World",
+                  "subheader": "subheader",
+                  "paragraphs": [
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. "
+                  ]
+                }
+              },
+              {
+                "type": "image",
+                "content": {
+                  "src": "./pic/test.png",
+                  "caption": "caption",
+                  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. "
+                }
+              }
+            ]
+          }
+        }
       }
     ]
   },
@@ -156,7 +200,7 @@
         "type": "transparent",
         "polygon": [[2290, 1240], [2685, 1240], [2140, 1360], [2830, 1360]],
         "action": {
-          "name": "iframe",
+          "name": "open-in-popup",
           "payload": {
             "url": "./Calligraphy/main.html"
           }
@@ -166,7 +210,7 @@
         "type": "transparent",
         "polygon": [[2230, 940], [2485, 940], [2290, 1180], [2485, 1180]],
         "action": {
-          "name": "new-tab",
+          "name": "open-in-new-tab",
           "payload": {
             "url": "./wish tree/index.html"
           }

@@ -1,0 +1,354 @@
+﻿// CONFIG
+
+// Main
+$border-size: 10px;
+$slider-inner-width: 916px - 2*$border-size;
+$slider-inner-height: 483px - 2*$border-size;
+$slider-main-color: #71ad37;
+$slider-back-color: #fff;
+$max-slides: 10;
+
+// Dot
+$dot-outer-size: 4px;
+$dot-inner-size: 6px;
+$dot-distance: 4px;
+$dot-distance-top: 10px;
+$dot-main-color: $slider-main-color;
+$dot-back-color: darken($slider-back-color, 30%);
+
+// Arrow
+$arrow-type: 'lite'; // standard | lite
+$arrow-size: 13px;
+$arrow-distance: 15px;
+$arrow-hover-shift: 0px;
+$arrow-color: darken($slider-back-color, 30%);
+$arrow-hover-color: $slider-main-color;
+// for lite arrow only
+$arrow-thickness: 2px;
+$arrow-thickness-hover: 3px;
+
+
+$speed: .5s;
+$easing: cubic-bezier(.4,1.3,.65,1); // ease-out
+
+@mixin noSelect() {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.csslider {
+    -moz-perspective: 1300px;
+    -ms-perspective: 1300px;
+    -webkit-perspective: 1300px;
+    perspective: 1300px;
+    display: inline-block;
+    text-align: left;
+    position: relative;
+    margin-bottom: $dot-distance + $dot-distance-top + 2 * $dot-outer-size;
+
+    & > input {
+        display: none;
+
+        @for $index from 1 through $max-slides {
+            &:nth-of-type(#{$index}):checked ~ ul li:first-of-type {
+                margin-left: -100% * ($index - 1);
+            }
+        }
+    }
+
+    & > ul {
+        position: relative;
+        width: $slider-inner-width + 2 * $border-size;
+        height: $slider-inner-height + 2 * $border-size;
+        z-index: 1;
+        font-size: 0;
+        line-height: 0;
+        background-color: $slider-back-color;
+        border: $border-size solid $slider-back-color;
+        margin: 0 auto;
+        padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+
+        & > li {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-size: 15px;
+            font-size: initial;
+            line-height: normal;
+            -moz-transition: all $speed $easing;
+            -o-transition: all $speed ease-out;
+            -webkit-transition: all $speed $easing;
+            transition: all $speed $easing;
+            vertical-align: top;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            white-space: normal;
+
+            &.scrollable {
+                overflow-y: scroll;
+            }
+        }
+    }
+
+    & > .navigation {
+        position: absolute;
+        bottom: -2 * $dot-outer-size;
+        left: 50%;
+        z-index: 10;
+        margin-bottom: -$dot-distance-top;
+        font-size: 0;
+        line-height: 0;
+        text-align: center;
+        @include noSelect();
+
+        & > div {
+            margin-left: -100%;
+        }
+
+        label {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            border-radius: 50%;
+            margin: 0 $dot-distance;
+            padding: $dot-outer-size;
+            background: $dot-back-color;
+
+            &:hover:after {
+                opacity: 1;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-left: -$dot-inner-size;
+                margin-top: -$dot-inner-size;
+                background: $dot-main-color;
+                border-radius: 50%;
+                padding: $dot-inner-size;
+                opacity: 0;
+            }
+        }
+    }
+
+    & > .arrows {
+        @include noSelect();
+
+        .goto-first,
+        .goto-last {
+
+        }
+    }
+
+    &.inside .navigation {
+        bottom: $border-size;
+        margin-bottom: $dot-distance-top;
+
+        label {
+            border: 1px solid #7e7e7e;
+        }
+    }
+}
+
+%opacity-one {
+  opacity: 1;
+}
+
+@for $i from 1 through $max-slides + 2 {
+  .csslider > input:nth-of-type(  #{$i}  ):checked ~ .navigation label:nth-of-type(  #{$i}  ):after {
+    @extend %opacity-one;
+  }
+}
+
+/*#region MODULES */
+
+
+@mixin render-arrow() {
+  @if ($arrow-type == 'lite') {
+    .csslider > .arrows {
+        position: absolute;
+        left: -$arrow-size - 3px - $arrow-distance;
+        top: 50%;
+        width: 100%;
+        height: 2 * $arrow-size;
+        padding: 0 $arrow-size + 3px + $arrow-distance;
+        z-index: 0;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+
+        label {
+            display: none;
+            position: absolute;
+            top: -50%;
+            padding: $arrow-size;
+            box-shadow: inset ($arrow-thickness) (-$arrow-thickness) 0 ($arrow-thickness - 1px) $arrow-color;
+            cursor: pointer;
+            -moz-transition: box-shadow .15s, margin .15s;
+            -o-transition: box-shadow .15s, margin .15s;
+            -webkit-transition: box-shadow .15s, margin .15s;
+            transition: box-shadow .15s, margin .15s;
+
+            &:hover {
+                box-shadow: inset ($arrow-thickness-hover) (-$arrow-thickness-hover) 0 ($arrow-thickness-hover - 1px) $arrow-hover-color;
+                margin: 0 -$arrow-hover-shift;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: -100%;
+                left: -100%;
+                height: 300%;
+                width: 300%;
+            }
+        }
+    }
+
+    %left-conditions {
+        display: block;
+        left: 0;
+        right: auto;
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .csslider.infinity > input:first-of-type:checked ~ .arrows label.goto-last {
+      @extend %left-conditions;
+    }
+
+    @for $i from 1 through $max-slides + 2 {
+      .csslider > input:nth-of-type(  #{$i}  ):checked ~ .arrows > label:nth-of-type(  #{$i - 1}  ) {
+        @extend %left-conditions;
+      }
+    }
+
+    %right-conditions {
+        display: block;
+        right: 0;
+        left: auto;
+        -moz-transform: rotate(225deg);
+        -ms-transform: rotate(225deg);
+        -o-transform: rotate(225deg);
+        -webkit-transform: rotate(225deg);
+        transform: rotate(225deg);
+    }
+
+    .csslider.infinity > input:last-of-type:checked ~ .arrows label.goto-first {
+      @extend %right-conditions;
+    }
+
+    @for $i from 1 through $max-slides + 2 {
+      .csslider > input:nth-of-type(  #{$i}  ):checked ~ .arrows > label:nth-of-type(  #{$i + 1}  ) {
+        @extend %right-conditions;
+      }
+    }
+}
+ @else if ($arrow-type == 'standard') {
+
+    .csslider > .arrows {
+        position: absolute;
+        left: -$arrow-size - $arrow-distance + 2px;
+        top: 50%;
+        width: 100%;
+        height: 2 * $arrow-size;
+        padding: 0 $arrow-size + $arrow-distance - 2px;
+        z-index: 0;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+
+        label {
+            display: none;
+            position: absolute;
+            top: -50%;
+            width: 0;
+            height: 0;
+            border-top: $arrow-size solid transparent;
+            border-bottom: $arrow-size solid transparent;
+            border-left: $arrow-size solid $arrow-color;
+            border-right: $arrow-size solid $arrow-color;
+            cursor: pointer;
+            -moz-transition: margin .15s;
+            -o-transition: margin .15s;
+            -webkit-transition: margin .15s;
+            transition: margin .15s;
+
+            &:hover {
+                border-left-color: $arrow-hover-color;
+                border-right-color: $arrow-hover-color;
+                margin: 0 -$arrow-hover-shift;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: -$arrow-size;
+                left: -$arrow-size - $arrow-hover-shift - $arrow-distance;
+                height: $arrow-size*2;
+                width: 2 * ($arrow-size + $arrow-distance + $arrow-hover-shift);
+            }
+        }
+    }
+
+    %left-conditions {
+        display: block;
+        left: 0;
+        right: auto;
+        border-left: none;
+    }
+
+    .csslider.infinity > input:first-of-type:checked ~ .arrows label.goto-last {
+      @extend %left-conditions;
+    }
+
+    @for $i from 1 through $max-slides + 2 {
+      .csslider > input:nth-of-type(  #{$i}  ):checked ~ .arrows > label:nth-of-type(  #{$i - 1}  ) {
+        @extend %left-conditions;
+      }
+    }
+
+    %right-conditions {
+      display: block;
+      right: 0;
+      left: auto;
+      border-right: none;
+    }
+
+    .csslider.infinity > input:last-of-type:checked ~ .arrows label.goto-first {
+      @extend %right-conditions;
+    }
+
+    @for $i from 1 through $max-slides + 2 {
+      .csslider > input:nth-of-type(  #{$i}  ):checked ~ .arrows > label:nth-of-type(  #{$i + 1}  ) {
+        @extend %right-conditions;
+      }
+    }
+}
+}
+/*#endregion */
+
+@include render-arrow();
+
+.slider-modal {
+  padding-left: 80px !important;
+  padding-right: 80px !important;
+  background-color: $slider-back-color !important;
+}

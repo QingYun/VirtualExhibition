@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "babel-runtime": "6.x",
+    "gutenberg-web-type": "^1.2.1",
     "sat": "^0.5.0",
     "three": "^0.78.0"
   },
@@ -39,9 +40,13 @@
     "ghooks": "^1.0.3",
     "imports-loader": "^0.6.5",
     "json-loader": "^0.5.4",
+    "node-sass": "^3.8.0",
     "open-browser-webpack-plugin": "0.0.2",
+    "resolve-url-loader": "^1.4.4",
+    "sass-loader": "^4.0.0",
     "stats-js": "^1.0.0-alpha1",
     "style-loader": "~0.13.0",
+    "url-loader": "^0.5.7",
     "validate-commit-msg": "2.x",
     "webpack": "latest",
     "webpack-dev-server": "latest"

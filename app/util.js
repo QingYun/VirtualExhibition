@@ -132,3 +132,19 @@ export function elm2Str(elm) {
   temp_parent.appendChild(elm);
   return temp_parent.innerHTML;
 }
+
+export function createElm(tag, attrs = {}, content) {
+  const elm = document.createElement(tag);
+
+  Object.keys(attrs).forEach((k) => {
+    if (typeof attrs[k] !== 'boolean' || attrs[k] === true) {
+      elm.setAttribute(k, attrs[k]);
+    }
+  });
+
+  if (content !== undefined) {
+    elm.innerText = content;
+  }
+
+  return elm;
+}

@@ -23,7 +23,8 @@ module.exports = {
   },
   module: {
     loaders:[
-      { test: /\.css$/, include: path.resolve(__dirname, 'app'), loader: 'style-loader!css-loader' },
+      { test: /\.scss$/, loaders: ['style', 'css', 'sass?sourceMap', 'resolve-url'] },
+      { test: /\.(jpg|png)$/, loader: 'url-loader' },
       { test: /\.js$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader' },
       { test: /\.json$/, loader: 'json-loader' },
     ]
