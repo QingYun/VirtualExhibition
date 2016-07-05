@@ -1,9 +1,8 @@
-var path = require('path'),
-    fs = require('fs');
+var fetchData = require('./fetch-data');
 
 module.exports = function(source) {
   var callback = this.async();
-  fs.readFile(path.resolve('./data.json'), 'utf-8', function (err, data) {
+  fetchData(function (err, data) {
     if (err) return callback(err);
     callback(null, 'const data = ' + data + '; module.exports = data;');
   });

@@ -15,7 +15,8 @@ module.exports = {
   },
   module: {
     loaders:[
-      { test: /\.scss$/, include: path.resolve(__dirname, 'app'), loaders: ['style', 'css', 'resolve-url', 'sass?sourceMap'] },
+      { test: /\.scss$/, include: path.resolve(__dirname, 'app'),
+        loaders: ['style', 'css', 'sass?sourceMap', path.join(__dirname, './set-max-slides-loader.js')] },
       { test: /\.(jpg|png)$/, loader: 'url-loader' },
       { test: /\.js$/, include: path.resolve(__dirname, 'app'), exclude: /node_modules/, loader: 'babel-loader' },
       { test: /data\.json$/, loader: path.join(__dirname, './data-loader.js') },
