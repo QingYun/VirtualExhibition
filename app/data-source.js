@@ -1,13 +1,17 @@
 import THREE from 'three';
-import test_data from '../data.json';
+
+const data = window.VIRTUAL_EXHIBITION_DATA
+  .reduce((acc, scene) => Object.assign(acc, { [scene.id]: scene }), {
+    __DEFAULT: window.VIRTUAL_EXHIBITION_DATA[0]
+  });
 
 class DataLoader extends THREE.EventDispatcher {
   constructor() {
     super();
   }
 
-  loadScene(scene_id = 0) {
-    this.dispatchEvent(Object.assign(test_data[scene_id], {
+  loadScene(scene_id = '__DEFAULT') {
+    this.dispatchEvent(Object.assign(data[scene_id], {
       type: 'new scene'
     }));
   }

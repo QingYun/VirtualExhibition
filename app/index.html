@@ -1,6 +1,237 @@
 <html>
   <title>Virtual Exhibition</title>
   <body>
+    <script>
+      window.VIRTUAL_EXHIBITION_DATA = [
+        {
+          "src": "./pic/1_entrance.jpg",
+          "width": 4096,
+          "height": 2048,
+          "widgets": [
+            {
+              "type": "portal",
+              "src": "./pic/up_arrow.png",
+              "pos": { "x": 2500, "y": 1500 },
+              "angle": 0,
+              "action": {
+                "name": "change-scene",
+                "payload": {
+                  "destination": 1
+                }
+              }
+            },
+            {
+              "type": "transparent",
+              "polygon": [[3530, 885], [3840, 895], [3850, 1080], [3535, 1090]],
+              "action": {
+                "name": "show-slider",
+                "payload": {
+                  "size": {
+                    "width": "800px",
+                    "height": "600px"
+                  },
+                  "slides": [
+                    {
+                      "type": "text",
+                      "content": {
+                        "header": "Hello World",
+                        "subheader": "subheader",
+                        "paragraphs": [
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. ",
+                          "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. "
+                        ]
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "content": {
+                        "src": "./pic/test.png",
+                        "caption": "caption",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada mi, semper id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus. "
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "src": "./pic/2_timeline.jpg",
+          "width": 4096,
+          "height": 2048,
+          "widgets": [
+            {
+              "type": "portal",
+              "src": "./pic/up_arrow.png",
+              "pos": { "x": 2500, "y": 1500 },
+              "angle": 0,
+              "action": {
+                "name": "change-scene",
+                "payload": {
+                  "destination": 2
+                }
+              }
+            }
+          ]
+        },
+        {
+          "src": "./pic/3_mapofaus.jpg",
+          "width": 4096,
+          "height": 2048,
+          "widgets": [
+            {
+              "type": "portal",
+              "src": "./pic/up_arrow.png",
+              "pos": { "x": 2500, "y": 1500 },
+              "angle": 90,
+              "action": {
+                "name": "change-scene",
+                "payload": {
+                  "destination": 3
+                }
+              }
+            },
+            {
+              "type": "image",
+              "src": "pic/play.png",
+              "size": { "width": 64, "height": 64 },
+              "pos": { "x": 1090, "y": 1010 },
+              "action": {
+                "name": "play-video",
+                "payload": {
+                  "sources": [
+                    { "src": "./videos/sintel.mp4", "type": "video/mp4" },
+                    { "src": "./videos/sintel.gov", "type": "video/ogv" }
+                  ],
+                  "size": {
+                    "width": "80%",
+                    "height": "500px"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "src": "./pic/4_sitting.jpg",
+          "width": 4096,
+          "height": 2048,
+          "widgets": [
+            {
+              "type": "portal",
+              "src": "./pic/up_arrow.png",
+              "pos": { "x": 2500, "y": 1500 },
+              "angle": 90,
+              "action": {
+                "name": "change-scene",
+                "payload": {
+                  "destination": 4
+                }
+              }
+            }
+          ]
+        },
+        {
+          "src": "./pic/5_NTIprograms.jpg",
+          "width": 4096,
+          "height": 2048,
+          "widgets": [
+            {
+              "type": "portal",
+              "src": "./pic/up_arrow.png",
+              "pos": { "x": 2500, "y": 1500 },
+              "angle": 60,
+              "action": {
+                "name": "change-scene",
+                "payload": {
+                  "destination": 5
+                }
+              }
+            }
+          ]
+        },
+        {
+          "src": "./pic/6_lifeHsing.jpg",
+          "width": 4096,
+          "height": 2048,
+          "widgets": [
+            {
+              "type": "portal",
+              "src": "./pic/up_arrow.png",
+              "pos": { "x": 2500, "y": 1500 },
+              "angle": 35,
+              "action": {
+                "name": "change-scene",
+                "payload": {
+                  "destination": 6
+                }
+              }
+            }
+          ]
+        },
+        {
+          "src": "./pic/7_lifept2.jpg",
+          "width": 4096,
+          "height": 2048,
+          "widgets": [
+            {
+              "type": "portal",
+              "src": "./pic/up_arrow.png",
+              "pos": { "x": 2500, "y": 1500 },
+              "angle": 35,
+              "action": {
+                "name": "change-scene",
+                "payload": {
+                  "destination": 7
+                }
+              }
+            }
+          ]
+        },
+        {
+          "src": "./pic/8_calligraphy.jpg",
+          "width": 4096,
+          "height": 2048,
+          "widgets": [
+            {
+              "type": "transparent",
+              "polygon": [[2290, 1240], [2685, 1240], [2140, 1360], [2830, 1360]],
+              "action": {
+                "name": "open-in-popup",
+                "payload": {
+                  "url": "./Calligraphy/main.html"
+                }
+              }
+            },
+            {
+              "type": "transparent",
+              "polygon": [[2230, 940], [2485, 940], [2290, 1180], [2485, 1180]],
+              "action": {
+                "name": "open-in-new-tab",
+                "payload": {
+                  "url": "./wish tree/index.html"
+                }
+              }
+            }
+          ]
+        }
+      ];
+    </script>
     <script type="text/javascript" src="bundle.js"></script>
   </body>
 </html>
