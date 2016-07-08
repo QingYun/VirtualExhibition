@@ -68,7 +68,8 @@
 {
   name: 'play-video',
   payload: {
-    sources: [{src: String, type: String}]  // MIME type
+    sources: [{src: String, type: String}],  // MIME types
+    size: {height: String, width: String}
   }
 }
 

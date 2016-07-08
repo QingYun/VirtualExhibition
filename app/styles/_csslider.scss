@@ -61,8 +61,6 @@ $easing: cubic-bezier(.4,1.3,.65,1); // ease-out
 
     & > ul {
         position: relative;
-        width: $slider-inner-width + 2 * $border-size;
-        height: $slider-inner-height + 2 * $border-size;
         z-index: 1;
         font-size: 0;
         line-height: 0;
@@ -103,7 +101,6 @@ $easing: cubic-bezier(.4,1.3,.65,1); // ease-out
 
     & > .navigation {
         position: absolute;
-        bottom: -2 * $dot-outer-size;
         left: 50%;
         z-index: 10;
         margin-bottom: -$dot-distance-top;

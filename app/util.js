@@ -148,3 +148,22 @@ export function createElm(tag, attrs = {}, content) {
 
   return elm;
 }
+
+function toPx(length, base) {
+  if (length.endsWith('px')) {
+    return parseInt(length, 10);
+  }
+
+  if (length.endsWith('%')) {
+    return parseInt(length, 10) / 100 * base;
+  }
+
+  return 0;
+}
+
+export function toPxSize({ width, height }) {
+  return {
+    width: toPx(width, window.innerWidth),
+    height: toPx(height, window.innerHeight)
+  };
+}

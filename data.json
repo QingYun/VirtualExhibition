@@ -22,6 +22,10 @@
         "action": {
           "name": "show-slider",
           "payload": {
+            "size": {
+              "width": "800px",
+              "height": "600px"
+            },
             "slides": [
               {
                 "type": "text",
@@ -109,7 +113,11 @@
             "sources": [
               { "src": "./videos/sintel.mp4", "type": "video/mp4" },
               { "src": "./videos/sintel.gov", "type": "video/ogv" }
-            ]
+            ],
+            "size": {
+              "width": "80%",
+              "height": "500px"
+            }
           }
         }
       }

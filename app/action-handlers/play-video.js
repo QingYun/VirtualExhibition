@@ -1,9 +1,11 @@
 import picoModal from '../vender/picoModal.js';
-import { elm2Str } from '../util.js';
+import { elm2Str, toPxSize } from '../util.js';
 
-module.exports = () => ({ sources }) => {
+module.exports = () => ({ sources, size }) => {
   const video = document.createElement('video');
-  video.setAttribute('width', window.innerWidth * 0.8);
+  const { width, height } = toPxSize(size);
+  video.setAttribute('width', width);
+  video.setAttribute('height', height);
   video.setAttribute('controls', true);
   sources.forEach(({ src, type }) => {
     const source = document.createElement('source');

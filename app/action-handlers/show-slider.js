@@ -1,6 +1,6 @@
 import path from 'path';
 import picoModal from '../vender/picoModal.js';
-import { elm2Str, createElm } from '../util.js';
+import { elm2Str, createElm, toPxSize } from '../util.js';
 
 const requireSlideGenerators = (req) => req
   .keys()
@@ -12,7 +12,7 @@ const requireSlideGenerators = (req) => req
 const slide_generators = requireSlideGenerators(
   require.context('./slide-generators', false, /\.js$/));
 
-module.exports = () => ({ slides }) => {
+module.exports = () => ({ slides, size }) => {
   const slider = createElm('div', { class: 'csslider' });
 
   [,...Array(slides.length)].forEach((_, i) =>
@@ -51,6 +51,9 @@ module.exports = () => ({ slides }) => {
   );
   navigation_container.appendChild(navigation);
   slider.appendChild(navigation_container);
+
+  const { width, height } = toPxSize(size);
+  slider.setAttribute('style', `width: ${width}; height: ${height};`);
 
   picoModal({
     content: elm2Str(slider),
